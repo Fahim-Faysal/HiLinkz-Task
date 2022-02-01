@@ -1,7 +1,8 @@
 import React from 'react';
 import { ImLocation } from 'react-icons/im';
 
-const To = () => {
+const To = ({ to, setTo }) => {
+
       return (
             <div style={{ minWidth: '25%', marginLeft: '10px' }}>
                   <div style={{ display: 'flex', alignItems: 'center', marginBottom: '15px' }}>
@@ -9,7 +10,7 @@ const To = () => {
 
                         <label style={{ fontSize: '20px', textAlign: 'start', width: "100%" }}>
                               To
-                              <input style={{ width: "100%", height: "40px", paddingLeft: '30px', backgroundColor: 'rgb(246,248,252' }} placeholder='Select departure' type="text" />
+                              <input style={{ width: "100%", height: "40px", paddingLeft: '30px', backgroundColor: 'rgb(246,248,252' }} placeholder='Select departure' type="text" value={to} onChange={(e) => setTo(e.target.value)} />
                         </label>
                   </div>
             </div >
