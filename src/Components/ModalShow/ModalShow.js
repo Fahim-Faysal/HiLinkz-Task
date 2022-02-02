@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Modal } from 'react-bootstrap';
 
-const ModalShow = ({ from, to, voucher, back, date, show, setModalShow }) => {
+const ModalShow = ({ from, to, voucher, back, date, total, show, setModalShow }) => {
 
       if (!show) {
             return null
@@ -27,7 +27,9 @@ const ModalShow = ({ from, to, voucher, back, date, show, setModalShow }) => {
                               <br />
                               <p>Return: {back}</p>
 
-                              <h6>Voucehr:{voucher}</h6>
+                              <h3>Total Passenger: {total}</h3>
+
+                              <h6>Voucehr: {voucher}</h6>
 
                         </div>
                   </Modal.Body>
