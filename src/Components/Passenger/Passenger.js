@@ -16,6 +16,9 @@ const Passenger = ({ total, setTotal }) => {
             setTotal(total += 1)
       }
       const Adultdecrease = () => {
+            if (acount < 1) {
+                  return
+            }
             setaCount(acount -= 1)
             setTotal(total -= 1)
       }
@@ -24,6 +27,9 @@ const Passenger = ({ total, setTotal }) => {
             setTotal(total += 1)
       }
       const ydecrease = () => {
+            if (ycount < 1) {
+                  return
+            }
             setyCount(ycount -= 1)
             setTotal(total -= 1)
       }
@@ -32,6 +38,9 @@ const Passenger = ({ total, setTotal }) => {
             setTotal(total += 1)
       }
       const cdecrease = () => {
+            if (ccount < 1) {
+                  return
+            }
             setcCount(ccount -= 1)
             setTotal(total -= 1)
       }
@@ -40,6 +49,9 @@ const Passenger = ({ total, setTotal }) => {
             setTotal(total += 1)
       }
       const idecrease = () => {
+            if (icount < 1) {
+                  return
+            }
             setiCount(icount -= 1)
             setTotal(total -= 1)
       }
@@ -56,15 +68,14 @@ const Passenger = ({ total, setTotal }) => {
                                     style={{ width: '100%', border: '2px solid black' }}
                                     variant='light'
                                     as={ButtonGroup}
-                                    // align={{ lg: 'center' }}
                                     title={`${total} passenger, Economy`}
                                     id="dropdown-menu-align-responsive-1"
                               >
-                                    <div style={{ backgroundColor: 'white', width: '450px', textAlign: 'center', height: 'auto' }}>
-                                          <div style={{ width: '100%', display: 'flex', justifyContent: 'space-around', alignItems: 'center' }}>
-                                                <div>
+                                    <div className='bg-white text-center h-auto' style={{ width: '450px' }}>
+                                          <div className='d-flex justify-content-around align-items-center w-100 '>
+                                                <div className='text-start'>
                                                       <h5>Adult</h5>
-                                                      <p>Up to 25 age</p>
+                                                      <p>Age 16 and over</p>
                                                 </div>
                                                 <div style={{ display: 'flex', height: '40px', width: '60px', alignItems: 'center' }}>
                                                       <button onClick={Adultdecrease}>-</button>
@@ -75,39 +86,41 @@ const Passenger = ({ total, setTotal }) => {
 
                                     </div>
 
-                                    <div style={{ width: '100%', display: 'flex', justifyContent: 'space-around', alignItems: 'center' }}>
-                                          <div>
-                                                <h5>Young Adult</h5>
-                                                <p>Age 12 - 15</p>
-                                          </div>
-                                          <div style={{ display: 'flex', height: '40px', width: '60px', alignItems: 'center' }}>
-                                                <button onClick={ydecrease}>-</button>
-                                                <input style={{ width: '30px', textAlign: 'center' }} type="text" value={ycount} />
-                                                <button onClick={yincrease}>+</button>
-                                          </div>
+                                    <div className='bg-white text-center h-auto' style={{ width: '450px' }}>
+                                          <div className='d-flex justify-content-around align-items-center w-100 '>
+                                                <div className='text-start'>
+                                                      <h5>Young Adult</h5>
+                                                      <p>Age 12 - 15</p>
+                                                </div>
+                                                <div style={{ display: 'flex', height: '40px', width: '60px', alignItems: 'center' }}>
+                                                      <button onClick={ydecrease}>-</button>
+                                                      <input className='text-center' style={{ width: '30px' }} type="text" value={ycount} />
+                                                      <button onClick={yincrease}>+</button>
+                                                </div>
 
+                                          </div>
                                     </div>
 
-                                    <div style={{ width: '100%', display: 'flex', justifyContent: 'space-around', alignItems: 'center' }}>
-                                          <div>
+                                    <div className='d-flex justify-content-around align-items-center w-100 '>
+                                          <div className='text-start'>
                                                 <h5>Child</h5>
                                                 <p>Age 2 - 11</p>
                                           </div>
                                           <div style={{ display: 'flex', height: '40px', width: '60px', alignItems: 'center' }}>
                                                 <button onClick={cdecrease}>-</button>
-                                                <input style={{ width: '30px', textAlign: 'center' }} type="text" value={ccount} />
+                                                <input className='text-center' style={{ width: '30px' }} type="text" value={ccount} />
                                                 <button onClick={cincrease}>+</button>
                                           </div>
                                     </div>
 
-                                    <div style={{ width: '100%', display: 'flex', justifyContent: 'space-around', alignItems: 'center' }}>
-                                          <div>
+                                    <div className='d-flex justify-content-around align-items-center w-100 '>
+                                          <div className='text-start'>
                                                 <h5>Infant</h5>
                                                 <p>Age up to 2</p>
                                           </div>
                                           <div style={{ display: 'flex', height: '40px', width: '60px', alignItems: 'center' }}>
                                                 <button onClick={idecrease}>-</button>
-                                                <input style={{ width: '30px', textAlign: 'center' }} type="text" value={icount} />
+                                                <input className='text-center' style={{ width: '30px' }} type="text" value={icount} />
                                                 <button onClick={iincrease}>+</button>
                                           </div>
                                     </div>
@@ -115,17 +128,6 @@ const Passenger = ({ total, setTotal }) => {
                               </DropdownButton>
 
                         </div>
-
-                        {/* <div>
-                              <button>
-                                    <select style={{ width: '100%', height: "40px", border: '2px solid black' }} name="subject" id="subject">
-                                          <option value="" defaultValue="selected">1 passenger, Economy</option>
-                                          <option value="" defaultValue="selected">1 passenger, Economy</option>
-                                          <option value="" defaultValue="selected">1 passenger, Economy</option>
-                                    </select>
-                              </button>
-                        </div> */}
-
 
                   </div>
             </>
